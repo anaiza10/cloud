@@ -1,0 +1,34 @@
+password:
+
+//Setup Git
+sudo apt update
+sudo apt install git -y
+git config --global user.name "Your Name"
+git config --global user.email "Your email"
+git --version
+git config --list
+//Install MySQL
+sudo apt update
+sudo apt install mysql-server -y
+sudo apt update
+systemctl status mysql 
+//(Press q to quit)
+sudo mysql_secure_installation
+//Choose:
+Root password → Yes
+Remove anonymous users → Yes
+Disallow remote root login → Yes
+Remove test DB → Yes
+Reload privileges → Yes//
+//Login test
+sudo mysql -u root -p
+CREATE USER 'belicia'@'localhost' IDENTIFIED WITH mysql_native_password BY 'belicia123';
+GRANT ALL PRIVILEGES ON web_project.* TO 'belicia'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+//Install node.js
+node -v
+npm -v
+If not found → install:
+sudo apt install nodejs npm -y
+
